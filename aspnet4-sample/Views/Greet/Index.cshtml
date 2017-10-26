@@ -1,0 +1,21 @@
+﻿@using Microsoft.Ajax.Utilities
+@model aspnet4_sample.Models.GreetModel
+
+<p></p>
+@using (Html.BeginForm("Greet", "Greet"))
+{
+
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", autofocus = "autofocus" })
+        @Html.ValidationMessageFor(m => m.Name)
+
+    </div>
+    <div>
+        @if (@Model != null)
+        {
+            @Model.Greeting
+        }
+
+    </div>
+            <button type="submit" class="btn btn-primary btn-lg">Greet</button>
+}
